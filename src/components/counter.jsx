@@ -1,10 +1,18 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
-//   state = {
-//     value: this.props.counter.value,
-//     tags: ["tag1", "tag2", "tag3"],
-//   };
+  componentDidUpdate(prevProps, prevState) {
+    console.log("prevProps", prevProps);
+    console.log("prevState", prevState);
+    if (prevProps.counter.value !== this.props.counter.value) {
+        //A Ajax call and get new data from the server
+    }
+  }
+  compoenentWill
+  //   state = {
+  //     value: this.props.counter.value,
+  //     tags: ["tag1", "tag2", "tag3"],
+  //   };
 
   //   constructor() {
   //       super();
@@ -28,18 +36,19 @@ class Counter extends Component {
     );
   }
 
-//   handleIncrement = () => {
-//     console.log();
-//     this.setState({ value: this.state.value + 1 }, () => {
-//       console.log("Updated Count");
-//     });
-//   };
+  //   handleIncrement = () => {
+  //     console.log();
+  //     this.setState({ value: this.state.value + 1 }, () => {
+  //       console.log("Updated Count");
+  //     });
+  //   };
 
-//   doHandleIncrement = (product) => {
-//     this.handleIncrement({ id: 1 });
-//   };
+  //   doHandleIncrement = (product) => {
+  //     this.handleIncrement({ id: 1 });
+  //   };
 
   render() {
+    console.log("Counter - Rendered");
     return (
       <div>
         <h4>Counter #{this.props.counter.id}</h4>
@@ -71,7 +80,7 @@ class Counter extends Component {
   }
 
   formatCount() {
-      const {value} = this.props.counter
+    const { value } = this.props.counter;
     return value === 0 ? "Zero" : value;
   }
 }
